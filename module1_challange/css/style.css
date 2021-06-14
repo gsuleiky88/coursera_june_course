@@ -1,12 +1,22 @@
-.btn {
-  background: gray;
-  border: 1px solid black;
-  text-transform: uppercase;
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 20px;
+}
+h1 {
+ text-align: center;
+ font-weight: bold;
 }
 p {
   font-style: italic;
   font-size: 10px;
   text-align: right;
+}
+.btn {
+  background: gray;
+  border: 1px solid black;
+  text-transform: uppercase;
 }
 .green {
   border: 1px solid green;

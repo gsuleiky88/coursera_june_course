@@ -14,11 +14,11 @@
    <div class="container" ng-controller="LunchCheckController">
      <h1>Lunch Checker</h1>
 
-         <div class="form-group">
+         <div class="form-group pt-3">
              <input id="lunch-menu" type="text" ng-class="{'green' : valid, 'red': valid == false}"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control" ng-model="lunchMenu">
-             <p>We Do Not consider an empty value as an item</p>
+             <p>We Do Not consider an empty value as a valid item</p>
          </div>
          <div class="form-group pt-3">
              <button class="btn btn-default" ng-click="lunchCheck()">Check If Too Much</button>
