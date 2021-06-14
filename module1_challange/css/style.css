@@ -1,0 +1,27 @@
+.btn {
+  background: gray;
+  border: 1px solid black;
+  text-transform: uppercase;
+}
+p {
+  font-style: italic;
+  font-size: 10px;
+  text-align: right;
+}
+.green {
+  border: 1px solid green;
+}
+.red {
+    border: 1px solid red;
+}
+.text-green {
+  color: green;
+}
+.text-red {
+    color:red;
+}
+.message {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+}
