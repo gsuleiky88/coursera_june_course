@@ -73,6 +73,7 @@ MenuSearchService.$inject = ['$http'];
               // process result and only keep items that match
                 angular.forEach (result.data.menu_items, function (item, key){
                 if((item.description).toLowerCase().indexOf(searchTerm) !== -1){
+                  console.log(item.description).toLowerCase());
                   foundItems.push (item);
               }
               });
