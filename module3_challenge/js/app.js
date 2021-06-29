@@ -12,8 +12,6 @@
       templateUrl: 'template/foundItems.html',
       scope: {
         items: '<',
-        myTitle: '@title',
-        badRemove: '=',
         onRemove: '&'
       },
       controller: FoundItemsDirectiveController,
