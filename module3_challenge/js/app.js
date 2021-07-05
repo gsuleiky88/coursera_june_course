@@ -12,8 +12,6 @@
       templateUrl: 'template/foundItems.html',
       scope: {
         items: '<',
-        myTitle: '@title',
-        badRemove: '=',
         onRemove: '&'
       },
       controller: FoundItemsDirectiveController,
@@ -72,7 +70,7 @@ MenuSearchService.$inject = ['$http'];
           }).then(function (result) {
               // process result and only keep items that match
                 angular.forEach (result.data.menu_items, function (item, key){
-                if((item.description).toLowerCase().indexOf(searchTerm) !== -1){
+                if((item.description).toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1){
                   foundItems.push (item);
               }
               });
