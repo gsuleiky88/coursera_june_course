@@ -5,12 +5,11 @@ angular.module('MenuApp')
 .controller('ItemDetailController', ItemDetailController);
 
 // 'item' is injected through state's resolve
-ItemDetailController.$inject = ['items']
-function ItemDetailController(items) {
+ItemDetailController.$inject = ['items','$stateParams']
+function ItemDetailController(items,$stateParams) {
   var itemDetail = this;
       itemDetail.items = items;
-      itemDetail.short_name = items[0].short_name;
-
+      itemDetail.categoryShortName = $stateParams.categoryShortName;
 }
 
 })();
