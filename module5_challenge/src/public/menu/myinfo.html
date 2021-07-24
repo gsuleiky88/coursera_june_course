@@ -1,48 +1,47 @@
 <div class="container">
-  <h2 id="menu-categories-title" class="text-center">Menu Categories</h2>
 
-  <form name="signUp" novalidate>
+  <div class="form-group col-md-4">
+    <p ng-if="myinfoCtrl.error">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+  </div>
+
+  <h2 ng-if="!myinfoCtrl.error" id="menu-categories-title" class="text-center">My Info</h2>
+
+  <form name="signUp" novalidate ng-if="!myinfoCtrl.error">
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="fname">First Name</label>
-        <input type="text" class="form-control" id="fname" placeholder="First Name" ng-model="signupCtrl.user.fname" required>
+        <p>{{myinfoCtrl.userInfo.fname}}</p>
       </div>
       <div class="form-group col-md-6">
         <label for="lname">Last Name</label>
-        <input type="text" class="form-control" id="lname" placeholder="Last Name" ng-model="signupCtrl.user.lname" required>
+        <p>{{myinfoCtrl.userInfo.lname}}</p>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="test@domain.com" ng-model="signupCtrl.user.email" required>
+        <p>{{myinfoCtrl.userInfo.email}}</p>
       </div>
       <div class="form-group col-md-6">
         <label for="phone_number">Phone Number</label>
-        <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number" ng-model="signupCtrl.user.phone_number" required>
+          <p>{{myinfoCtrl.userInfo.phone_number}}</p>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="address">Address</label>
-        <input type="text" class="form-control" id="address" name="address" placeholder="Address" ng-model="signupCtrl.user.address" required>
+          <p>{{myinfoCtrl.userInfo.address}}</p>
       </div>
-      <div class="form-group col-md-4">
+      <div class="form-group col-md-6">
         <label for="short_name">Favorite dish</label>
-        <input type="text" class="form-control" id="short_name" name="short_name" placeholder="Short category" ng-model="signupCtrl.user.short_name" required>
-        <!--<select id="short_name" class="form-control">
-          <option selected>Select...</option>
-        </select>-->
-      </div>
-      <div class="form-group col-md-4">
-        <p ng-if="signupCtrl.error">{{signupCtrl.notification}}</p>
-        <p ng-if="signupCtrl.success">{{signupCtrl.notification}}</p>
+        <p>{{myinfoCtrl.userInfo.short_name}}</p>
       </div>
 
     </div>
   <div class="form-row text-center">
     <div class="form-group col-md-12">
-    <button type="button" class="btn btn-primary" ng-click="signupCtrl.signup()">Sign up</button>
+      <menu-item  menu-item="myinfoCtrl.userInfo.choosenMenuCateg">
+      </menu-item>
     </div>
   </div>
 

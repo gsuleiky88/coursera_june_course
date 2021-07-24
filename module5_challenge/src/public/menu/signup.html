@@ -19,7 +19,7 @@
       </div>
       <div class="form-group col-md-6">
         <label for="phone_number">Phone Number</label>
-        <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number" ng-model="signupCtrl.user.phone_number" required>
+        <input type="tel" class="form-control" id="phone_number" name="phone_number" placeholder="Phone Number" ng-model="signupCtrl.user.phone_number" required maxlength="10" minlength="10">
       </div>
     </div>
     <div class="form-row">
@@ -29,22 +29,23 @@
       </div>
       <div class="form-group col-md-4">
         <label for="short_name">Favorite dish</label>
-        <input type="text" class="form-control" id="short_name" name="short_name" placeholder="Short category" ng-model="signupCtrl.user.short_name" required>
+        <input type="text" class="form-control" id="short_name" name="short_name" placeholder="Short category" ng-model="signupCtrl.user.short_name" required maxlength="3">
         <!--<select id="short_name" class="form-control">
           <option selected>Select...</option>
         </select>-->
       </div>
       <div class="form-group col-md-4">
-        <p ng-if="signupCtrl.error">{{signupCtrl.notification}}</p>
-        <p ng-if="signupCtrl.success">{{signupCtrl.notification}}</p>
+        <p ng-show="signupCtrl.error">{{signupCtrl.notification}}</p>
+        <p ng-show="signupCtrl.success">{{signupCtrl.notification}}</p>
       </div>
-
     </div>
+
   <div class="form-row text-center">
     <div class="form-group col-md-12">
-    <button type="button" class="btn btn-primary" ng-click="signupCtrl.signup()">Sign up</button>
+    <button type="button" class="btn btn-success" ng-disabled="signUp.$invalid" ng-click="signupCtrl.signup()">SIGN UP</button>
     </div>
   </div>
+
 
   </form>
 </div>

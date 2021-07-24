@@ -11,22 +11,24 @@ function SignupController(UserService, MenuService) {
   var error = false;
 
   $ctrl.signup = function () {
-   UserService.signUp($ctrl.user);
+
    MenuService.getMenuItemsByShortName($ctrl.user.short_name).then( function(resp) {
      if(resp.short_name) {
-        UserService.signUp($ctrl.user);
+        UserService.setUserInfo($ctrl.user);
+        UserService.setChoosenMenuCateg(resp);
         $ctrl.success = true;
         $ctrl.error = false;
         $ctrl.notification = "Your information has been saved";
     }
      else {
        $ctrl.error = true;
+       $ctrl.success = false;
        $ctrl.notification = "No such menu number exists";
      }
-     console.log($ctrl.user);
    }).catch (function (res) {
      $ctrl.error = true;
      $ctrl.notification = "No such menu number exists";
+     UserService.setUserInfo({});
    })
 
   }
